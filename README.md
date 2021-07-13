@@ -3,8 +3,11 @@ Proposed method is based on regularized multi-task learning(RMTL) approach which
 
 ## Load require R package 
 ```
+library(SingleCellExperiment)
 library(RMTL)
 library(Rtsne)
 library(lattice)
 library(caret)
 ```
+## Preprocessing the data
+goolam<-readRDS('Data/goolam.rds')
