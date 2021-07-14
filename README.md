@@ -11,3 +11,7 @@ library(caret)
 ```
 ## Preprocessing the data
 goolam<-readRDS('Data/goolam.rds')
+
+## Dry run on CBMC data
+[Demo run of RMTL based cell type detection on CBMC data](https://piuupadhyaypu.github.io/RMTL-method-used-for-cell-type-detection-in-sc-RNA-seq/index.html)
+
