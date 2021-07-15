@@ -1,12 +1,10 @@
-## Welcome to GitHub Pages
+## RMTL based cell type detection on CBMC data
 
-You can use the [editor on GitHub](https://github.com/piuupadhyaypu/RMTL-method-used-for-cell-type-detection-in-sc-RNA-seq/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Regularized multi-task learning(RMTL) based cell type detection for single cell RNA sequence. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Summary
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The proposed method is a supervised multi-tasking learning model to identify the marker genes from the data sequence. The result gives a clear overview of the framework. It handles the challenging goal of learning the cluster structure and treats them as a separate task in the model.
 
 ```markdown
 Syntax highlighted code block
