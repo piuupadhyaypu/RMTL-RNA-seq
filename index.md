@@ -6,6 +6,13 @@ Regularized multi-task learning(RMTL) based cell type detection for single cell 
 
 The proposed method is a supervised multi-tasking learning model to identify the marker genes from the data sequence. The result gives a clear overview of the framework. It handles the challenging goal of learning the cluster structure and treats them as a separate task in the model.
 
+### How to use this Model
+CBMC dataset used for manifestation purposes. Data can be download from https://www.ncbi.nlm.nih.gov/geo/ under accession no. GSE100866.
+The column of the input matrix contains cells and genes represented in rows.
+
+**Data Loading and Pre-processing**
+
+
 ```markdown
 Syntax highlighted code block
 
