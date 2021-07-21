@@ -11,7 +11,20 @@ CBMC dataset used for manifestation purposes. Data can be download from https://
 The column of the input matrix contains cells and genes represented in rows.
 
 **Data Loading and Pre-processing**
+```
+library(lattice)
+library(ggplot2)
+library(caret)
 
+```
+### Data Preparation
+**Spliting the dataset into training and testing** 
+
+The dataset is ramdomly split into two parts: training(80%) and testing(20%) 
+
+**Construction of Classifier**
+
+For building a classifier, we are using RMTL(Regularized Multi-Task Learning) concept. The advantage of this model is that it can take multiple cell clusters as input and simultaneously learn from the features. 
 
 ```markdown
 Syntax highlighted code block
