@@ -19,13 +19,17 @@ library(caret)
 
 ```
 ### Data Preparation
-**Spliting the dataset into training and testing** 
+**1. Spliting the dataset into training and testing** 
 
 The dataset is ramdomly split into two parts: training(80%) and testing(20%) 
 
-**Construction of Classifier**
+**2. Construction of Classifier**
 
-For building a classifier, we are using RMTL(Regularized Multi-Task Learning) concept. The advantage of this model is that it can take multiple cell clusters as input and simultaneously learn from the features. 
+For building a classifier, we are using RMTL(Regularized Multi-Task Learning) concept. The advantage of this model is that it can take multiple cell clusters as input and simultaneously learn from the features. Before giving training data as input to the classifier, we have to arrange them into groups according to annotation matrix. 
+```
+train_cvfitc <- cvMTL(data_X, data_Y, type="Classification", Regularization="L21", Lam1_seq=10^seq(1,-4, -1),  Lam2=0, opts=list(init=0,  tol=10^-6, maxIter=1500), nfolds=5, stratify=FALSE, parallel=TRUE)
+train_model=MTL(data_X, data_Y, type = "Classification", Regularization = "L21",Lam1 = train_cvfitc$Lam1.min, Lam1_seq = NULL, Lam2 = 0, opts = list(init = 0, tol= 10^-3, maxIter = 100), G = NULL, k = 2)
+```
 
 ```markdown
 Syntax highlighted code block
