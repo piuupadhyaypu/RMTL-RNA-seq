@@ -11,6 +11,7 @@ CBMC dataset used for manifestation purposes. Data can be download from https://
 The column of the input matrix contains cells and genes represented in rows.
 
 **Data Loading and Pre-processing**
+Single cell RNA count matrix is loaded and then cells and genes are filtered. On the filtered matrix, logarithm normalization is applied.   
 ```
 library(lattice)
 library(ggplot2)
