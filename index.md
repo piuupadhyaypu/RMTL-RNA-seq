@@ -27,12 +27,27 @@ The dataset is ramdomly split into two parts: training(80%) and testing(20%)
 
 For building a classifier, we are using RMTL(Regularized Multi-Task Learning) concept. The advantage of this model is that it can take multiple cell clusters as input and simultaneously learn from the features. Before giving training data as input to the classifier, we have to arrange them into groups according to annotation matrix. 
 ```
-train_cvfitc <- cvMTL(data_X, data_Y, type="Classification", Regularization="L21", Lam1_seq=10^seq(1,-4, -1),  Lam2=0, opts=list(init=0,  tol=10^-6, maxIter=1500), nfolds=5, stratify=FALSE, parallel=TRUE)
-train_model=MTL(data_X, data_Y, type = "Classification", Regularization = "L21",Lam1 = train_cvfitc$Lam1.min, Lam1_seq = NULL, Lam2 = 0, opts = list(init = 0, tol= 10^-3, maxIter = 100), G = NULL, k = 2)
+# Performs Cross-Validation with parallel computing
+train_cvfitc <- cvMTL(data_X, data_Y, type="Classification", Regularization="L21", Lam1_seq=10^seq(1,-4, -1),  
+                Lam2=0, opts=list(init=0,  tol=10^-6, maxIter=1500), nfolds=5, stratify=FALSE, parallel=TRUE)
+
+# Train the model
+train_model=MTL(data_X, data_Y, type = "Classification", Regularization = "L21",Lam1 = train_cvfitc$Lam1.min, 
+            Lam1_seq = NULL, Lam2 = 0, opts = list(init = 0, tol= 10^-3, maxIter = 100), G = NULL, k = 2)
 ```
 
 **3. Validation of Classifier**
 The preserved test datasets are used for evaluation of our model which is optimized by cross-validation technique. 
+```
+# Predict and Error Calculation
+# Calculating error for training and testing datasets  
+training_error=calcError(cbmc_train_model_cvfitr, data_cbmc_X_mtl, data_cbmc_Y_mtl)
+test_error=calcError(cbmc_train_model_cvfitr, data_test_X_mtl, data_test_Y_mtl)
+# Predict for classification
+predicted_set_t_cbmc_classification1=predict(cbmc_train_model,data_test_X_mtl)
+
+``````
+
 ```markdown
 Syntax highlighted code block
 
