@@ -31,6 +31,8 @@ train_cvfitc <- cvMTL(data_X, data_Y, type="Classification", Regularization="L21
 train_model=MTL(data_X, data_Y, type = "Classification", Regularization = "L21",Lam1 = train_cvfitc$Lam1.min, Lam1_seq = NULL, Lam2 = 0, opts = list(init = 0, tol= 10^-3, maxIter = 100), G = NULL, k = 2)
 ```
 
+**3. Validation of Classifier**
+The preserved test datasets are used for evaluation of our model which is optimized by cross-validation technique. 
 ```markdown
 Syntax highlighted code block
 
