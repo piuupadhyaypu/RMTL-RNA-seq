@@ -13,7 +13,11 @@ The column of the input matrix contains cells and genes represented in rows.
 **Data Loading and Pre-processing**
 Single cell RNA count matrix is loaded and then cells and genes are filtered. On the filtered matrix, logarithm normalization is applied.   
 ```
+#load RNA UMI data
 cbmc_data <- read.csv("Data/GSE100866_CBMC_8K_13AB_10X-RNA_umi.csv",header=FALSE)
+
+#Before going into preprocess steps, prefix word 'HUMAN_' and 'MOUSE_' are removed from sequence. 
+
 library(lattice)
 library(ggplot2)
 library(caret)
@@ -23,6 +27,7 @@ data = as.matrix(read.csv("cbmc_data.csv",header=FALSE))
 cell = as.matrix(read.csv("cbmc_cellannotation.csv",header=FALSE))
 gene = as.matrix(read.csv("cbmc_gene.csv",header=FALSE))
 ```
+After preprocessing step, the remaining dataset contains 2000 genes and 7895 cells
 ### Data Preparation
 **1. Spliting the dataset into training and testing** 
 
