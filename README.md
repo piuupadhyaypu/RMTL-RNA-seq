@@ -16,5 +16,5 @@ library(caret)
 
 
 ## Dry run on CBMC data
-[Demo run of RMTL based cell type detection on CBMC data](https://github.com/piuupadhyaypu/RMTL-method-used-for-cell-type-detection-in-sc-RNA-seq/blob/gh-pages/index.md)
+[Demo run of RMTL based cell type detection on CBMC data](https://piuupadhyaypu.github.io/RMTL-method-used-for-cell-type-detection-in-sc-RNA-seq/)
 
