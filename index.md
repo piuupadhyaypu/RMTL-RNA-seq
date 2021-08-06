@@ -27,7 +27,11 @@ data = as.matrix(read.csv("cbmc_data.csv",header=FALSE))
 cell = as.matrix(read.csv("cbmc_cellannotation.csv",header=FALSE))
 gene = as.matrix(read.csv("cbmc_gene.csv",header=FALSE))
 ```
-After preprocessing step, the remaining dataset contains 2000 genes and 7895 cells
+After preprocessing step, the remaining dataset contains 2000 genes and 7895 cells. For visualization of the cell types, t-sne plot used.
+
+![cbmc_fulldataset](https://user-images.githubusercontent.com/86721570/128569137-676b8f79-186b-4a5f-a241-776077d5e2d8.jpeg)
+
+
 ### Data Preparation
 **1. Spliting the dataset into training and testing** 
 
@@ -47,7 +51,27 @@ train_model=MTL(data_X, data_Y, type = "Classification", Regularization = "L21",
 ```
 
 **3. Validation of Classifier**
-The preserved test datasets are used for evaluation of our model which is optimized by cross-validation technique. 
+The preserved test datasets are used for evaluation of our model which is optimized by cross-validation technique. Accuracy of the model can be measured by confusion matrix and the table also shows the rate of cell type prediction.
+
+| Cell Type	| Precision	|	Recall |	Accuracy | F1 |
+|-----------|:---:|:---:|:---:|:---:|
+| Eryth	    | 1	        | 1      |	1        |	1 |
+| NK	      | 1         |	0.9992631 |	0.9994 |	0.9996314 |
+| CD14+ Mono |	1 |	1 |	1 |	1 |
+| Mk |	1 |	0.9948849 |	0.9949  |	0.9974359 |
+| CD34+	| 1 |	1 |	1 |	1 |
+| DC |	1 |	1 |	1	| 1 |
+| Memory CD4 T |	1 |	0.9991797 |	0.9994 |	0.9995897 |
+| CD8 T |	1 |	1 |	1 |	1 |
+| CD16+ Mono |	1 |	0.9993455 |	0.9994 |	0.9996727 |
+| B cell |	1 |	0.9993364 |	0.9994	| 0.9996681 |
+| T/Mono doublets	| 1	| 0.996134 |	0.9962	| 0.9980633 |
+| pDCs |	1	| 1	| 1 |	1 |
+| Naive CD4 T	| 1 |	0.9992526 |	0.9994 |	0.9996262 |
+
+![cbmc](https://user-images.githubusercontent.com/86721570/128572047-24bc9a8c-3600-425e-9370-887eb2de7eba.jpeg)
+
+
 ```
 # Predict and Error Calculation
 # Calculating error for training and testing datasets  
