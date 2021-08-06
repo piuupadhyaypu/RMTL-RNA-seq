@@ -11,7 +11,7 @@ CBMC dataset used for manifestation purposes. Data can be download from https://
 The column of the input matrix contains cells and genes represented in rows.
 
 **Data Loading and Pre-processing**
-Single cell RNA count matrix is loaded and then cells and genes are filtered. On the filtered matrix, logarithm normalization is applied.   
+Single cell RNA count matrix is loaded and then for preprocessing Seurat v3 and Limma package is used. This popular R packages supports gene and cell filtering, normalization and QC(quality control) analysis of single cell data.   
 ```
 #load RNA UMI data
 cbmc_data <- read.csv("Data/GSE100866_CBMC_8K_13AB_10X-RNA_umi.csv",header=FALSE)
