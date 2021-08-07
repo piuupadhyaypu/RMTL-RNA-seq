@@ -69,8 +69,7 @@ The preserved test datasets are used for evaluation of our model which is optimi
 | pDCs |	1	| 1	| 1 |	1 |
 | Naive CD4 T	| 1 |	0.9992526 |	0.9994 |	0.9996262 |
 
-![cbmc](https://user-images.githubusercontent.com/86721570/128572047-24bc9a8c-3600-425e-9370-887eb2de7eba.jpeg)
-
+This table shows, accuracy rate is 0.99, means our classifier has identified almost every cell types.
 
 ```
 # Predict and Error Calculation
@@ -82,8 +81,10 @@ predicted_set_t_cbmc_classification1=predict(cbmc_train_model,data_test_X_mtl)
 
 ``````
 
-```markdown
-Syntax highlighted code block
+![cbmc_web](https://user-images.githubusercontent.com/86721570/128607281-7491a4c4-85fd-490f-859c-ac252882947c.jpg)
+
+This above plotting shows the confusion matrix heatmap plot for predicted v/s reference or ture cell types.
+
 
 # Header 1
 ## Header 2
@@ -98,7 +99,6 @@ Syntax highlighted code block
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
-```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
