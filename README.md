@@ -6,6 +6,8 @@ Proposed method is based on regularized multi-task learning(RMTL) approach which
 
 ## Load require R package 
 ```
+library(Seurat)
+library(Limma)
 library(SingleCellExperiment)
 library(RMTL)
 library(Rtsne)
@@ -13,7 +15,7 @@ library(lattice)
 library(caret)
 ```
 ## Preprocessing the data
-
+The data used here is preprocessed by Seurat v3 and Limma package for prior analysis, quality control, preprocessing like gene and cell filtering, normalization. 
 
 ## Dry run on CBMC data
 [Demo run of RMTL based cell type detection on CBMC data](https://piuupadhyaypu.github.io/RMTL-method-used-for-cell-type-detection-in-sc-RNA-seq/)
