@@ -42,16 +42,34 @@ The dataset is ramdomly split into two parts: training(80%) and testing(20%)
 For building a classifier, we are using RMTL(Regularized Multi-Task Learning) concept. The advantage of this model is that it can take multiple cell clusters as input and simultaneously learn from the features. Before giving training data as input to the classifier, we have to arrange them into groups according to annotation matrix. 
 ```
 # Performs Cross-Validation with parallel computing
-train_cvfitc <- cvMTL(data_X, data_Y, type="Classification", Regularization="L21", Lam1_seq=10^seq(1,-4, -1),  
+train_cvfitc <- cvMTL(data_X_training, data_Y_training, type="Classification", Regularization="L21", Lam1_seq=10^seq(1,-4, -1),  
                 Lam2=0, opts=list(init=0,  tol=10^-6, maxIter=1500), nfolds=5, stratify=FALSE, parallel=TRUE)
 
 # Train the model
-train_model=MTL(data_X, data_Y, type = "Classification", Regularization = "L21",Lam1 = train_cvfitc$Lam1.min, 
+train_model=MTL(data_X_training, data_Y_training, type = "Classification", Regularization = "L21",Lam1 = train_cvfitc$Lam1.min, 
             Lam1_seq = NULL, Lam2 = 0, opts = list(init = 0, tol= 10^-3, maxIter = 100), G = NULL, k = 2)
 ```
 
 **3. Validation of Classifier**
-The preserved test datasets are used for evaluation of our model which is optimized by cross-validation technique. Accuracy of the model can be measured by confusion matrix and the table also shows the rate of cell type prediction.
+The preserved test datasets are used for evaluation of our model which is optimized by cross-validation technique. 
+
+```
+# Predictive analysis
+predicted_cbmc = predict(train_model,data_X_test)
+```
+
+The figure below give us a better visualization of original with respect to predicted cell types, with the help of individual cell type plotting.
+
+**CD14 cell type:**
+
+![cbmc_ori_pre_CD14_cell3](https://user-images.githubusercontent.com/86721570/129381090-55a3af86-2971-4ad7-983f-5753671466ed.jpeg) 
+
+**Mk cell type:**
+
+![cbmc_ori_pre_Mk_cell4](https://user-images.githubusercontent.com/86721570/129381265-b7c2d987-9b2e-401c-b325-89c9b1243fe3.jpeg) 
+
+
+Accuracy of the model can be measured by confusion matrix and the table also shows the rate of cell type prediction.
 
 | Cell Type	| Precision	|	Recall |	Accuracy | F1 |
 |-----------|:---:|:---:|:---:|:---:|
