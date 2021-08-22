@@ -2,7 +2,7 @@
 Regularized multi-task learning(RMTL) based cell type detection for single cell RNA sequence. 
 
 ## Introduction
-Proposed method is based on regularized multi-task learning(RMTL) approach which allow us to acquire the knowledge of relationship present with a particular cell type, by identifying common features. This determines the marker genes from each cell clusters which is a tedious task. 
+Proposed method is based on regularized multi-task learning(RMTL) approach which allow us to acquire the knowledge of relationship present with a particular cell type, by identifying common features. This determines the marker genes from each cell clusters which is a tedious task, if we do it manually.  
 
 ## Load require R package 
 ```
