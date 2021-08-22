@@ -1,4 +1,4 @@
-# RMTL-method-used-for-cell-type-detection-in-sc-RNA-seq
+# RMTL-RNA-seq
 Regularized multi-task learning(RMTL) based cell type detection for single cell RNA sequence. 
 
 ## Introduction
