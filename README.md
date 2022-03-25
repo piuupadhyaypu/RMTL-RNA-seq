@@ -18,5 +18,5 @@ library(caret)
 The data used here is preprocessed by Seurat v3 and Limma package for prior analysis, quality control, preprocessing like gene and cell filtering, normalization. 
 
 ## Dry run on CBMC data
-[Demo run of RMTL based cell type detection on CBMC data](https://piuupadhyaypu.github.io/RMTL-RNA-seq/)
+[Demo run of RMTL based cell type detection on CBMC data](https://github.com/piuupadhyaypu/RMTL-RNA-seq/blob/fded1f9e8bc524229122f2c64854ed4993f09910/index.md)
 
