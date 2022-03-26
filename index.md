@@ -71,10 +71,11 @@ The figure below give us a better visualization of original with respect to pred
 
 The table shows the percentage of correct prediction and recall in each cell type of CBMC 
 
-| Cell Type	| Sample present in data	|	Recall |	Prediction |
-|-----------|:---:|:---:|:---:|:---:|
-| Eryth	    | 105	        | 94      |	93.1       |	
-| NK	      | 1089         |	87.77 |	94.8 |	
+
+| Cell Type	| #samples present in data	|	Recall |	Prediction |
+|:---:|:---:|:---:|:---:|
+| Eryth	    | 105	 | 94  |	93.1   |	
+| NK	      | 1089    |	87.77 |	94.8 |	
 | CD14+ Mono |	2293 |	97.7|	99.1 |	
 | Mk |	96 |	92.1 |	89.6  |	
 | CD34+	| 119 |	89.04 |	88.8 |	
