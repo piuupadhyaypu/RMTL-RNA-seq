@@ -69,25 +69,25 @@ The figure below give us a better visualization of original with respect to pred
 ![cbmc_ori_pre_Mk_cell4](https://user-images.githubusercontent.com/86721570/129381265-b7c2d987-9b2e-401c-b325-89c9b1243fe3.jpeg) 
 
 
-Accuracy of the model can be measured by confusion matrix and the table also shows the rate of cell type prediction.
+The table shows the percentage of correct prediction and recall in each cell type of CBMC 
 
-| Cell Type	| Precision	|	Recall |	Accuracy | F1 |
+| Cell Type	| Sample present in data	|	Recall |	Prediction |
 |-----------|:---:|:---:|:---:|:---:|
-| Eryth	    | 1	        | 1      |	1        |	1 |
-| NK	      | 1         |	0.9992631 |	0.9994 |	0.9996314 |
-| CD14+ Mono |	1 |	1 |	1 |	1 |
-| Mk |	1 |	0.9948849 |	0.9949  |	0.9974359 |
-| CD34+	| 1 |	1 |	1 |	1 |
-| DC |	1 |	1 |	1	| 1 |
-| Memory CD4 T |	1 |	0.9991797 |	0.9994 |	0.9995897 |
-| CD8 T |	1 |	1 |	1 |	1 |
-| CD16+ Mono |	1 |	0.9993455 |	0.9994 |	0.9996727 |
-| B cell |	1 |	0.9993364 |	0.9994	| 0.9996681 |
-| T/Mono doublets	| 1	| 0.996134 |	0.9962	| 0.9980633 |
-| pDCs |	1	| 1	| 1 |	1 |
-| Naive CD4 T	| 1 |	0.9992526 |	0.9994 |	0.9996262 |
+| Eryth	    | 105	        | 94      |	93.1       |	
+| NK	      | 1089         |	87.77 |	94.8 |	
+| CD14+ Mono |	2293 |	97.7|	99.1 |	
+| Mk |	96 |	92.1 |	89.6  |	
+| CD34+	| 119 |	89.04 |	88.8 |	
+| DC |	70 |	91.1 |	90.8	| 
+| Memory CD4 T |	1781 |	97 |	95.1 |	
+| CD8 T |	273 |	90.2 |	89.7 |	
+| CD16+ Mono |	230 |	87.7 |	88.5 |	
+| B cell |	350 |	93.3 |	91.7	| 
+| T/Mono doublets	| 182	| 92.7 |	91.5	| 
+| pDCs |	49	| 91.8	| 90 |	
+| Naive CD4 T	| 1248 |	98.2 |	93.6 |	
 
-This table shows, accuracy rate is 0.99, means our classifier has identified almost every cell types.
+
 
 ```
 # Predict and Error Calculation
